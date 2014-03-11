@@ -19,7 +19,7 @@ As the second bits will wait for 2^N state change of the LSB before it carries o
 
 This will  also result in a more visible LED display of the respective state change each time.
 
-#Testing procedure
+#Testing procedure for Moore Machine
 
 For Moore Machine, after configuring the FPGA, the 7 segment display started off with the indicator of elevator at level 1. 
 I started off testing for the 1st condition as stated in the MooreElevatorController_shell code 
@@ -33,6 +33,18 @@ I proceeded for cases when current floor is '2' and '3'. All their outputs are c
 
 Now for current floor at '4', when 'up_down=0 and stop=0', the output actually start its descent from level 4 all the way to level 1, with a slight delay between transition to each level. Whereas for other combinations , when 
 "up_down=1 and stop =0","up_down=0 and stop=1" and "up_down=1 and stop=1" the output level on the 7-Segment display output 4. This verified that the Moore Code VHD file is true and its opertion meets the required functionality
+
+Demo carried out, verified and certifyed good by CPT SLIVA.
+
+#Testing procedure for Mealy Machine 
+
+For Mealy Machine, i decided to demonstrate it together with the Moore Code added on and display it.
+
+The Mealy Machine stop, reset and up_down are all of the same switches, as those used previously by the Moore Machine.
+
+Additional signal-->floor_signal_1 and floor_signal_2 were created to be use as signal wires to the output port,'floor' and 'nextfloor' of the MealyElevatorControl.vhd codes
+
+As similar to the testing of the Moore Machine. I tried out all the cases as stated on the Mealy and Moore ElevatorController VHD code.It turns out all well. it was then further verified and certified good by CPT SILVA.
 
 
 
