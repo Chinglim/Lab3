@@ -19,7 +19,7 @@ As the second bits will wait for 2^N state change of the LSB before it carries o
 
 This will  also result in a more visible LED display of the respective state change each time.
 
-#[Testing procedure]
+#Testing procedure
 
 For Moore Machine, after configuring the FPGA, the 7 segment display started off with the indicator of elevator at level 1. 
 I started off testing for the 1st condition as stated in the MooreElevatorController_shell code 
