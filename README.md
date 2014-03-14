@@ -46,5 +46,28 @@ Additional signal-->floor_signal_1 and floor_signal_2 were created to be use as 
 
 As similar to the testing of the Moore Machine. I tried out all the cases as stated on the Mealy and Moore ElevatorController VHD code.It turns out all well. it was then further verified and certified good by CPT SILVA.
 
+#Testing procedure for B functionality (More floors)  (VERFIED WORKABLE BY CPT SLIVA)
+
+Additional floor_state  conditions were added to the MooreElevatorPrimenumber_shell.vhd codes. As seen below, will be the similar codes for floor5 till floor7
+
+when floor5 =>
+        if (up_down='1' and stop='0') then 
+                floor_state <=floor6;
+        elsif (up_down='0' and stop='0') then 
+                floor_state <=floor4;
+        else
+                floor_state <=floor5; 	
+        end if;
+					
+then floor8 codes are then also added as shown below.				
+
+when floor8 =>
+	if (up_down='0' and stop='0') then 
+	   floor_state <=floor7;
+      else
+	   floor_state <=floor8; 	
+    end if;
+    
+floordigit1 and floordigit2 was then used to symbolise the first and second 7 segment display from the right.
 
 
