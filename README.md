@@ -46,7 +46,9 @@ Additional signal-->floor_signal_1 and floor_signal_2 were created to be use as 
 
 As similar to the testing of the Moore Machine. I tried out all the cases as stated on the Mealy and Moore ElevatorController VHD code.It turns out all well. it was then further verified and certified good by CPT SILVA.
 
-#Testing procedure for B functionality (More floors)  (VERFIED WORKABLE BY CPT SLIVA)
+#Testing procedure for B functionality (More floors)  
+
+For more floors, we are tasked to display the first 8 prime numbered floors on the 7 segment display
 
 Additional floor_state  conditions were added to the MooreElevatorPrimenumber_shell.vhd codes. As seen below, will be the similar codes for floor5 till floor7
 
@@ -69,5 +71,10 @@ when floor8 =>
     end if;
     
 floordigit1 and floordigit2 was then used to symbolise the first and second 7 segment display from the right.
+
+floordigit1 will target on displaying 1, 2, 3, 5, 7 ,9, while floordigit2 will target on displaying the tenth digit, either one of two for the second 7 segment display.
+
+Testing and demo was shown and verified workable by CPT SLIVA too.
+
 
 
