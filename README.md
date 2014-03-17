@@ -76,5 +76,40 @@ floordigit1 will target on displaying 1, 2, 3, 5, 7 ,9, while floordigit2 will t
 
 Testing and demo was shown and verified workable by CPT SLIVA too.
 
+#Testing procedure for B functionality (Change inputs)
+Purpose of this functionality is to iinput a three bit number, specifiying the floor to go to. Using only numbers from 0-7. The progress from level to level still steps one floor per clock edge. 
 
+Inst_MooreElevatorChangeinputs_Shell: MooreElevatorChangeinputs_Shell PORT MAP(
+		clk => ClockBus_sig(25) ,
+		input =>switch(3 downto 0) ,
+		floordigit2 => floor_sig_1
+	);
+end Behavioral;
 
+The above code was added to allow user to use the switches for the inputs into the hardware. 
+
+Then in the Changeinputs.vhd file , the following code was used for the respective floor states
+			when floor1 =>
+					if (input>"0000") then 
+						floor_state <=floor2;
+					--led_state <= up;
+					else
+						floor_state <=floor1;
+					--led_state <= nothing;						
+					end if;
+					
+			when floor2 =>
+					if (input>"0001") then 
+						floor_state <=floor3;
+					--led_state <= up;
+					elsif (input<"0001") then 
+						floor_state <=floor1;
+					 --led_state <= down;
+					else
+						floor_state <=floor2; 
+				    --led_state <= nothing;							
+					end if;
+
+up till floorstate 7, this are the conditions listed when respective inputs in entered via the switches.
+
+Running of the codes via the hardware was carried out. The display was able to count and stop at the respective user entered floor, both upwards and downwards.Demostration is carried out to Cpt Silva and verified workable and good.
