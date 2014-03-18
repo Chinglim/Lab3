@@ -18,6 +18,11 @@ The pupose of the "Clock_Divider" is to provide a certain amount of frequency to
 As the second bits will wait for 2^N state change of the LSB before it carries out a state change. This also applies for the subsequent  higher number of bits up to the MSB.  
 
 This will  also result in a more visible LED display of the respective state change each time.
+#Functionality
+1)Basic Moore Machine
+2)Basic Mealy Machine
+3)More Floors
+4)Change Inputs
 
 #Testing procedure for Moore Machine
 
